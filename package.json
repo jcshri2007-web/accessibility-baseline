@@ -1,0 +1,13 @@
+{
+  "name": "accessibility-baseline",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Monorepo-style foundation: accessible client + API server, built from an accessibility audit.",
+  "scripts": {
+    "start": "node server/src/index.js",
+    "dev": "node --watch server/src/index.js",
+    "test": "node --test",
+    "audit:lighthouse": "sh scripts/run-lighthouse.sh"
+  },
+  "engines": { "node": ">=18" }
+}

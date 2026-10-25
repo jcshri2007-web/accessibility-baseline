@@ -1,0 +1,26 @@
+:root { --fg:#1a1a1a; --bg:#ffffff; --muted:#4a4a4a; --accent:#0b5cad; --error:#b00020; --border:#767676; }
+* { box-sizing: border-box; }
+body { font: 1.125rem/1.6 system-ui, sans-serif; color: var(--fg); background: var(--bg); margin: 0; }
+header, main, footer { max-width: 60rem; margin: 0 auto; padding: 1rem; }
+header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+nav ul { display: flex; gap: 1.5rem; list-style: none; margin: 0; padding: 0; }
+a { color: var(--accent); }
+.brand { font-weight: 700; margin: 0; }
+.skip-link { position: absolute; left: -999px; top: 0; background: #000; color: #fff; padding: .75rem 1rem; z-index: 10; }
+.skip-link:focus { left: 0; }
+:focus-visible { outline: 3px solid #ffbf47; outline-offset: 2px; box-shadow: 0 0 0 5px #000; }
+.field, fieldset { margin: 0 0 1.25rem; }
+label, legend { display: block; font-weight: 600; }
+.hint { display: block; color: var(--muted); font-size: 1rem; }
+input[type=text], textarea { width: 100%; font: inherit; padding: .6rem; border: 2px solid var(--border); border-radius: 4px; }
+.radio { display: flex; align-items: center; gap: .5rem; min-height: 44px; }
+.radio label { font-weight: 400; }
+input[type=radio] { width: 1.5rem; height: 1.5rem; }
+button { font: inherit; font-weight: 700; min-height: 44px; padding: .5rem 1.5rem; background: var(--accent); color: #fff; border: 2px solid var(--accent); border-radius: 4px; cursor: pointer; }
+.error { color: var(--error); font-weight: 600; display: block; }
+.field.invalid input, .field.invalid textarea { border-color: var(--error); }
+.error-summary { border: 4px solid var(--error); padding: 1rem; margin-bottom: 1rem; }
+table { border-collapse: collapse; width: 100%; }
+th, td { text-align: left; padding: .5rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }

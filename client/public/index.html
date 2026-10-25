@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility Issue Tracker</title>
+  <meta name="description" content="Report and review accessibility problems found on a public service website.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header>
+    <p class="brand">A11y Baseline</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#report-heading">Report an issue</a></li>
+        <li><a href="#list-heading">Reported issues</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <h1>Accessibility Issue Tracker</h1>
+
+    <section aria-labelledby="report-heading">
+      <h2 id="report-heading">Report an issue</h2>
+      <div id="error-summary" class="error-summary" role="alert" tabindex="-1" hidden></div>
+      <form id="report-form" novalidate>
+        <div class="field">
+          <label for="page">Page or component</label>
+          <span id="page-hint" class="hint">For example: main navigation, contact form.</span>
+          <input id="page" name="page" type="text" autocomplete="off" aria-describedby="page-hint page-error">
+          <span id="page-error" class="error" hidden></span>
+        </div>
+        <div class="field">
+          <label for="description">What went wrong?</label>
+          <span id="description-hint" class="hint">Say who is blocked and how. At least 10 characters.</span>
+          <textarea id="description" name="description" rows="4" aria-describedby="description-hint description-error"></textarea>
+          <span id="description-error" class="error" hidden></span>
+        </div>
+        <fieldset>
+          <legend>Severity</legend>
+          <div class="radio"><input type="radio" id="sev-low" name="severity" value="low"><label for="sev-low">Low</label></div>
+          <div class="radio"><input type="radio" id="sev-medium" name="severity" value="medium"><label for="sev-medium">Medium</label></div>
+          <div class="radio"><input type="radio" id="sev-high" name="severity" value="high"><label for="sev-high">High</label></div>
+          <div class="radio"><input type="radio" id="sev-critical" name="severity" value="critical"><label for="sev-critical">Critical</label></div>
+          <span id="severity-error" class="error" hidden></span>
+        </fieldset>
+        <button type="submit">Submit report</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="list-heading">
+      <h2 id="list-heading" tabindex="-1">Reported issues</h2>
+      <p id="status" role="status" class="visually-hidden"></p>
+      <table>
+        <caption class="visually-hidden">Reported accessibility issues</caption>
+        <thead><tr><th scope="col">ID</th><th scope="col">Page or component</th><th scope="col">Severity</th><th scope="col">Description</th></tr></thead>
+        <tbody id="report-rows"><tr><td colspan="4">Loading…</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer><p>Built as the foundation for an accessible full-stack project.</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
